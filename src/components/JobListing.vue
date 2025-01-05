@@ -13,10 +13,10 @@
 	}
 	
 	const truncatedDescription = computed(() => {
-		let description = props.job.description;
+		let description = props.job?.description || '';
 		
 		if (!showFullDescription.value) {
-			description = description.substring(0, 90) + '...';
+			description = description + '...';
 		}
 		
 		return description;
